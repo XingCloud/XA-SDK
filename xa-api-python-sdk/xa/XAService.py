@@ -40,4 +40,4 @@ class XAService:
             path = path +  str(self.uid)
         else:
             path = path +  str(uid)
-        return self.path + '?' + requestParams.toQueryString()
+        return path + '?' + requestParams.toQueryString()
