@@ -7,7 +7,6 @@ class XAService:
     def __init__(self, appid, uid = None):
         self.appid = appid
         self.uid = uid
-        self.path = '/v4/' + appid + '/' + uid
         self.host = 'xa.xingcloud.com'
 
     def action(self, action, uid = None, timeout=10):
