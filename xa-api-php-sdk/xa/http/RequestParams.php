@@ -1,7 +1,7 @@
 <?php
-include_once '../model/Action.php';
-include_once '../model/Update.php';
-include_once '../model/Operation.php';
+include_once dirname(__FILE__) . '/../model/Action.php';
+include_once dirname(__FILE__) . '/../model/Update.php';
+include_once dirname(__FILE__) . '/../model/Operation.php';
 
 class RequestParams {
 	

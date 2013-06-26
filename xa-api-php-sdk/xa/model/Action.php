@@ -1,5 +1,5 @@
 <?php
-include_once '../../model/Operation.php' ;
+include_once dirname(__FILE__) . '/Operation.php' ;
 
 class Action implements \Operation {
 	

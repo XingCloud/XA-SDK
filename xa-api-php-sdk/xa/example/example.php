@@ -1,7 +1,7 @@
 <?php
-include_once '../XAService.php';
-include_once '../model/Action.php';
-include_once '../model/Update.php';
+include_once dirname(__FILE__) . '/../XAService.php';
+include_once dirname(__FILE__) . '/../model/Action.php';
+include_once dirname(__FILE__) . '/../model/Update.php';
 
 $visit = new Action ( 'visit' );
 $buyFruit = new Action ( 'buy.fruit', 1 );

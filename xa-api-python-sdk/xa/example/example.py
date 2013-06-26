@@ -41,14 +41,14 @@ if __name__ == '__main__':
         # batch with timestamp,two actions & one update
         # all timestamp in actions will be fixed by
         # used often when the client time is not accurate
-        response = xaService.batchWithAbsoluteTime([buy,updateNation],long(time.time()),10);
+        response = xaService.batchWithAbsoluteTime([buy,updateNation],long(time.time()));
         responseHandle(response)
 
         # batch with absolute timestamp,one action
         # all timestamp in actions will be ignored
         # and replaced by absoluteTimestamp
         # rarely used
-        response = xaService.batchWithTimestamp([buy],1831339293,10);
+        response = xaService.batchWithTimestamp([buy],1831339293);
         responseHandle(response)
 
 
