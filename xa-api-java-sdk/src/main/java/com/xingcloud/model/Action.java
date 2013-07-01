@@ -9,6 +9,11 @@ package com.xingcloud.model;
  */
 public class Action implements  Operation{
 
+
+    public static Action Visit = new Action("visit");
+    public static Action HeartBeat = new Action("heartbeat");
+
+
     // event eventName
     private String eventName;
     // event value , default 0

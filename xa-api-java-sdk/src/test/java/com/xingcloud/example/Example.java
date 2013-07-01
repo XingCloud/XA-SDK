@@ -1,7 +1,9 @@
 package com.xingcloud.example;
 
+import com.xingcloud.Pay337;
 import com.xingcloud.XAService;
 import com.xingcloud.model.Action;
+import com.xingcloud.model.Pay;
 import com.xingcloud.model.Update;
 
 import java.io.IOException;
@@ -17,6 +19,12 @@ import java.util.Arrays;
 public class Example {
 
     public static void main(String args[]) {
+        logXA();
+        pay337();
+    }
+
+
+    private static void logXA(){
         String appid = "xa_demo";
         String uid = "123a" ;
         XAService xaService = new XAService(appid,uid);
@@ -74,6 +82,39 @@ public class Example {
         } catch (IOException e) {
             e.printStackTrace();
             // TODO exception handle
+        }
+    }
+
+
+    private static void pay337(){
+        String appid = "337test" ;
+        String uid = "123" ;
+
+        Pay337 pay337 = new Pay337(appid,uid);
+
+        String channelTransId = "123" ;
+        String status = Pay.APP_SUCCESS  ;
+        String channel = "googlecheckout";
+        long amount = 100l ;
+        String currency = "USD" ;
+        long gross = 10l ;
+        long fee = 4l ;
+        long timestamp = System.currentTimeMillis() / 1000;
+
+         Pay pay = new Pay( channelTransId,
+                 status,
+                 channel,
+                 amount,
+                 currency,
+                 gross,
+                 fee,
+                 timestamp)  ;
+        try{
+
+            String response = pay337.pay(pay,10);
+            responseHandle(response);
+        }catch (IOException e){
+             e.printStackTrace();
         }
     }
 

@@ -28,6 +28,16 @@ public class RequestParams {
         }
     }
 
+    public RequestParams(Map<String,Object> params){
+        addParam(params);
+    }
+
+    public void addParam(Map<String,Object> params){
+        for(Map.Entry<String,Object> entry:params.entrySet()){
+            this.params.put(entry.getKey(),String.valueOf(entry.getValue()));
+        }
+    }
+
     public void addParam(String key,String value){
         params.put(key,value);
     }
@@ -35,6 +45,7 @@ public class RequestParams {
     public void removeParam(String key){
         params.remove(key);
     }
+
 
     public String toQueryString(){
         boolean firstParam = true ;
@@ -47,5 +58,9 @@ public class RequestParams {
             firstParam = false;
         }
         return  queryString ;
+    }
+
+    public Map<String, String> getParams() {
+        return params;
     }
 }
