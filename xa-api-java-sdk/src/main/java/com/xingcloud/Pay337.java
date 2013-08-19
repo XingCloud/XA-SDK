@@ -1,6 +1,5 @@
 package com.xingcloud;
 
-import com.sun.org.apache.xml.internal.security.algorithms.implementations.SignatureBaseRSA;
 import com.xingcloud.http.HttpToolkit;
 import com.xingcloud.http.RequestParams;
 import com.xingcloud.model.Pay;
