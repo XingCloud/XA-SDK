@@ -104,6 +104,11 @@ public class XA implements IXA {
     action(act);
   }
 
+  public void visit(long timestamp){
+    Action act = new Action("visit",timestamp);
+    action(act);
+  }
+
   public void pay() {
     Action pay = new Action("pay");
     action(pay);
@@ -111,6 +116,11 @@ public class XA implements IXA {
 
   public void pay(long value) {
     Action pay = new Action("pay", value);
+    action(pay);
+  }
+
+  public void pay(long value,long timestamp){
+    Action pay = new Action("pay",value,timestamp);
     action(pay);
   }
 
